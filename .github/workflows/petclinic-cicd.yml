@@ -31,7 +31,7 @@ jobs:
               -Dsonar.host.url="$SONAR_HOST_URL" \
               -Dsonar.token="$SONAR_TOKEN" \
               -Dsonar.oraganization-bootcamp1 \
-              -Dsonar.projectKey=myown-springbootapp \
-              -Dsonar.projectName=myown-springbootapp \
+              -Dsonar.projectKey=myown-springbootapps \
+              -Dsonar.projectName=myown-springbootapps \
               -Dsonar.java.binaries=target/classes \
               -Dsonar.qualitygate.timeout=300
