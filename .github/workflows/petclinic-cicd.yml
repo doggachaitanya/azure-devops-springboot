@@ -22,16 +22,18 @@ jobs:
           with:
             distribution: temurin
             java-version: '21'
+            cache : maven
         - name: Sonar Analysis
           env:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
             SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
           run: |
               mvn -B verify sonar:sonar \
-              -Dsonar.host.url="$SONAR_HOST_URL" \
-              -Dsonar.token="$SONAR_TOKEN" \
+              # -Dsonar.host.url="$SONAR_HOST_URL" \
+              # -Dsonar.token="$SONAR_TOKEN" \
               -Dsonar.oraganization-bootcamp1 \
               -Dsonar.projectKey=myown-springbootapps \
               -Dsonar.projectName=myown-springbootapps \
               -Dsonar.java.binaries=target/classes \
+              -Dsonar.qualitygate.wait=true \
               -Dsonar.qualitygate.timeout=300
