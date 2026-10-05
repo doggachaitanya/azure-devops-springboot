@@ -1,0 +1,14 @@
+name: PetClinic CI/CD
+
+on:
+  push:
+    branches: [prod]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build, Test, Scan & Push
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: read
